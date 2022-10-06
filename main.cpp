@@ -1,3 +1,10 @@
+//
+// Project name : LAB 02 - Mandelbrot
+// Project members :
+// - Tranchida Rachel
+// - Aellen Quentin
+//
+
 #include<iostream>
 #include <vector>
 
