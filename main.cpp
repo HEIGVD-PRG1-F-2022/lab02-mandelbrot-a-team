@@ -19,12 +19,19 @@ int main() {
 }
 
 vector<vector<int>> mandelbrotSet(vector<vector<int>> graphics) {
-    for (int x = 0; x < graphics.size(); x++) {
-        for (int y = 0; y < graphics[x].size(); y++) {
-            int iteration = mandelbrot(x * ((2.47) / graphics.size()) - 2.0, -y * ((2.24) / graphics[x].size()) + 1.12);
-            int codeCouleur = iteration == MAX_ITERATION ? 0 : 1;
+    int graphicsVectorWidth = graphics.size();
+
+    for (int x = 0; x < graphicsVectorWidth; x++) {
+        int graphicsVectorHeight = graphics[x].size();
+        for (int y = 0; y < graphicsVectorHeight; y++) {
+            double xStart = x * ((2.47) / graphicsVectorWidth) - 2.0;
+            double yStart = -y * ((2.24) / graphicsVectorHeight) + 1.12;
+
+            int iteration = mandelbrot(xStart, yStart);
+
+            int colorCode = iteration == MAX_ITERATION ? 0 : 1;
             //x and y are reversed
-            graphics[y][x] = codeCouleur;
+            graphics[y][x] = colorCode;
         }
     }
     return graphics;
