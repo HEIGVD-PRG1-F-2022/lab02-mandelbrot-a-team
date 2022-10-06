@@ -21,7 +21,7 @@ int main() {
 vector<vector<int>> mandelbrotSet(vector<vector<int>> graphics) {
     for (int x0 = 0; x0 < graphics.size(); x0++) {
         for (int y0 = 0; y0 < graphics[x0].size(); y0++) {
-            int iteration = mandelbrot(y0+(2.47)/graphics[x0].size()-2, x0 +(2.24)/graphics.size() +1.12);
+            int iteration = mandelbrot(x0+((2.47)/graphics.size())-2, y0+((2.24)/graphics[x0].size()) +1.12);
             int codeCouleur = iteration == MAX_ITERATION ? 0 : 1;
             graphics[x0][y0] = codeCouleur;
         }
