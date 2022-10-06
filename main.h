@@ -11,7 +11,7 @@
 #include <vector>
 
 int mandelbrot(double x0, double y0);
-std::vector<std::vector<int>>  mandelbrotSet(std::vector<std::vector<int>>);
+void mandelbrotSet(std::vector<std::vector<int>> &);
 void draw(std::vector<std::vector<int>>);
 
 #endif //MANDELBROT_MAIN_H

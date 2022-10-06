@@ -13,7 +13,7 @@ using namespace std;
 
 int main() {
     vector<vector<int>> graphics(100, vector<int>(100));
-    graphics = mandelbrotSet(graphics);
+    mandelbrotSet(graphics);
     draw(graphics);
     return 0;
 }
