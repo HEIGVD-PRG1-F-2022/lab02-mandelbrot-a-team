@@ -44,7 +44,7 @@ void mandelbrotSet(vector<vector<int>> &graphics) {
  * Display 2D array into terminal
  * @param graphics
  */
-void draw(vector<vector<int>> graphics) {
+void draw(vector<vector<int>> &graphics) {
     for (int x = 0; x < graphics.size(); x++) {
         for (int y = 0; y < graphics[x].size(); y++) {
             cout << graphics[x][y];
