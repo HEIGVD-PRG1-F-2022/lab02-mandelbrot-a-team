@@ -10,7 +10,7 @@
 #define MANDELBROT_MAIN_H
 #include <vector>
 
-int mandelbrot(int x0, int y0);
+int mandelbrot(double x0, double y0);
 std::vector<std::vector<int>>  mandelbrotSet(std::vector<std::vector<int>>);
 void draw(std::vector<std::vector<int>>);
 

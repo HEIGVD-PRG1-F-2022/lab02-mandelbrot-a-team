@@ -19,11 +19,12 @@ int main() {
 }
 
 vector<vector<int>> mandelbrotSet(vector<vector<int>> graphics) {
-    for (int x0 = 0; x0 < graphics.size(); x0++) {
-        for (int y0 = 0; y0 < graphics[x0].size(); y0++) {
-            int iteration = mandelbrot(x0+((2.47)/graphics.size())-2, y0+((2.24)/graphics[x0].size()) +1.12);
+    for (int x = 0; x < graphics.size(); x++) {
+        for (int y = 0; y < graphics[x].size(); y++) {
+            //y0 and x0 are reversed
+            int iteration = mandelbrot(y * ((2.47) / graphics[x].size()) - 2.0, -x * ((2.24) / graphics.size()) + 1.12);
             int codeCouleur = iteration == MAX_ITERATION ? 0 : 1;
-            graphics[x0][y0] = codeCouleur;
+            graphics[x][y] = codeCouleur;
         }
     }
     return graphics;
@@ -48,13 +49,13 @@ void draw(vector<vector<int>> graphics) {
  * @param y0
  * @return number of iteration
  */
-int mandelbrot(int x0, int y0) {
+int mandelbrot(double x0, double y0) {
     int iteration = 0;
     double x = 0.0;
     double y = 0.0;
     while (x * x + y * y <= 2 * 2 and iteration < MAX_ITERATION) {
-        double xtemp = x * x - y * y + x0 / 100.0;
-        y = 2 * x * y + y0 / 100.0;
+        double xtemp = x * x - y * y + x0;
+        y = 2 * x * y + y0;
         x = xtemp;
 
         iteration = iteration + 1;
