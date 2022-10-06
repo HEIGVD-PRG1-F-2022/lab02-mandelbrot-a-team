@@ -5,7 +5,7 @@
 // - Aellen Quentin
 //
 
-#include<iostream>
+#include <iostream>
 #include "main.h"
 
 const int MAX_ITERATION = 1000;
@@ -18,7 +18,11 @@ int main() {
     return 0;
 }
 
-vector<vector<int>> mandelbrotSet(vector<vector<int>> graphics) {
+/**
+ * Calculate mandelbrotSet values and save them into a 2D array
+ * @param graphics
+ */
+void mandelbrotSet(vector<vector<int>> &graphics) {
     int graphicsVectorWidth = graphics.size();
 
     for (int x = 0; x < graphicsVectorWidth; x++) {
@@ -30,16 +34,15 @@ vector<vector<int>> mandelbrotSet(vector<vector<int>> graphics) {
             int iteration = mandelbrot(xStart, yStart);
 
             int colorCode = iteration == MAX_ITERATION ? 0 : 1;
-            //x and y are reversed
+            // x and y are reversed
             graphics[y][x] = colorCode;
         }
     }
-    return graphics;
 }
 
 /**
  * Display 2D array into terminal
- * @param vector<vector<int>> graphics
+ * @param graphics
  */
 void draw(vector<vector<int>> graphics) {
     for (int x = 0; x < graphics.size(); x++) {
@@ -52,8 +55,8 @@ void draw(vector<vector<int>> graphics) {
 
 /**
  * Calculate maximum number of mandelbrot iteration before
- * @param x0
- * @param y0
+ * @param x0 starting x offset
+ * @param y0 starting y offset
  * @return number of iteration
  */
 int mandelbrot(double x0, double y0) {
