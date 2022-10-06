@@ -54,21 +54,21 @@ void draw(vector<vector<int>> &graphics) {
 }
 
 /**
- * Calculate maximum number of mandelbrot iteration before
+ * Calculate maximum number of mandelbrot iteration before exceeding MAX_ITERATION or if numbers have a tendency to be infinite
  * @param x0 starting x offset
  * @param y0 starting y offset
  * @return number of iteration
  */
 int mandelbrot(double x0, double y0) {
     int iteration = 0;
-    double x = 0.0;
-    double y = 0.0;
-    while (x * x + y * y <= 2 * 2 and iteration < MAX_ITERATION) {
-        double xtemp = x * x - y * y + x0;
-        y = 2 * x * y + y0;
-        x = xtemp;
+    double r = 0.0; // Real number
+    double i = 0.0; // Imaginary number
+    while ((r * r) + (i * i) <= 2 * 2 and iteration < MAX_ITERATION) {
+        double xtemp = (r * r) - (i * i) + x0;
+        i = 2 * r * i + y0;
+        r = xtemp;
 
-        iteration = iteration + 1;
+        iteration++;
     }
     return iteration;
 }
