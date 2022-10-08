@@ -12,7 +12,8 @@ const int MAX_ITERATION = 1000;
 using namespace std;
 
 int main() {
-    vector<vector<int>> graphics(100, vector<int>(100));
+    int width = 1000, height = 1000;
+    vector<vector<int>> graphics(width, vector<int>(height));
     mandelbrotSet(graphics);
     draw(graphics);
     return 0;
