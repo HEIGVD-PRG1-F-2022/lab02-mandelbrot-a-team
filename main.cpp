@@ -40,6 +40,19 @@ void mandelbrotSet(vector<vector<int>> &graphics) {
 }
 
 /**
+ * Will normalize value between a new defined range
+ * @param value the current value you want to match your new range
+ * @param targetMin lowest limit of your new range
+ * @param targetMax highest limit of your new range
+ * @param currentMin lowest value possible of current value range
+ * @param currentMax highest value possible of current value range
+ * @return equivalent interpretation of the value in the specified new range
+ */
+int normalizeIterationRange(int value, int targetMin, int targetMax, int currentMin = 0, int currentMax = MAX_ITERATION) {
+    return (value-currentMin) / (currentMax - currentMin) * (targetMax-targetMin) + targetMin;
+}
+
+/**
  * Display 2D array into terminal
  * @param graphics
  */
@@ -51,6 +64,17 @@ void draw(vector<vector<int>> &graphics) {
         cout << endl;
     }
 }
+
+/**
+ * Display 2D array into terminal with grayscale (need compatible terminal)
+ * More information here : https://tforgione.fr/posts/ansi-escape-codes/
+ * @param graphics
+ */
+void drawGrayscale(vector<vector<int>> &graphics) {
+    for (int x = 0; x < graphics.size(); x++) {
+        for (int y = 0; y < graphics[x].size(); y++) {
+            int code = normalizeIterationRange(graphics[x][y], 232, 255);
+            cout << "\x1b[38;5;" << to_string(code) << "m " << "*" << "\x1b[0m";
         }
         cout << endl;
     }
