@@ -8,11 +8,11 @@ Building a c++ project to display mandelbrot set
 
 ## Todo / Objectives
 
-- [ ] Implements pseudocode that can be found [here](https://en.wikipedia.org/wiki/Mandelbrot_set#Computer_drawings)
-- [ ] Create 2D array with `vector<vector<int>>` ([check link for more details](https://cyberlearn.hes-so.ch/mod/page/view.php?id=1885851))
-- [ ] Display 2D array
-  - [ ] with integers values
-  - [ ] with ASCII chars with grey levels
+- [x] Implements pseudocode that can be found [here](https://en.wikipedia.org/wiki/Mandelbrot_set#Computer_drawings)
+- [x] Create 2D array with `vector<vector<int>>` ([check link for more details](https://cyberlearn.hes-so.ch/mod/page/view.php?id=1885851))
+- [x] Display 2D array
+  - [x] with integers values
+  - [x] with ASCII chars with grey levels
 - [ ] Animates the 2D display
   - [ ] Add waiting time between each images
   - [ ] Find an interesting level of zoom to display the mandelbrot
