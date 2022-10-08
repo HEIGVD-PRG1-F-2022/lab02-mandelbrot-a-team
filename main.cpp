@@ -15,7 +15,8 @@ int main() {
     int width = 100, height = 100;
     vector<vector<int>> graphics(width, vector<int>(height));
     mandelbrotSet(graphics);
-    draw(graphics);
+    //draw(graphics);
+    drawGrayscale(graphics);
     return 0;
 }
 
