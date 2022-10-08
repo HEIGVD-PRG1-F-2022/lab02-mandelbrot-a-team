@@ -33,10 +33,8 @@ void mandelbrotSet(vector<vector<int>> &graphics) {
             double yStart = -y * ((2.24) / graphicsVectorHeight) + 1.12;
 
             int iteration = mandelbrot(xStart, yStart);
-
-            int colorCode = iteration == MAX_ITERATION ? 0 : 1;
             // x and y are reversed
-            graphics[y][x] = colorCode;
+            graphics[y][x] = iteration;
         }
     }
 }
@@ -48,7 +46,11 @@ void mandelbrotSet(vector<vector<int>> &graphics) {
 void draw(vector<vector<int>> &graphics) {
     for (int x = 0; x < graphics.size(); x++) {
         for (int y = 0; y < graphics[x].size(); y++) {
-            cout << graphics[x][y];
+            cout << (graphics[x][y] == MAX_ITERATION ? '0' : '1');
+        }
+        cout << endl;
+    }
+}
         }
         cout << endl;
     }
