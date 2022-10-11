@@ -18,35 +18,11 @@ int main() {
     system(("chcp "s + std::to_string(CP_UTF8)).c_str()); //for colored output in console
 #endif
     int width = 100, height = 100;
-    vector<vector<int>> graphics(width, vector<int>(height));
-    mandelbrotSet(graphics);
-    //draw(graphics);
+
     //drawGrayscale(calcRect(-2, -1.12, 0.47, 1.12, 1000, 1000));
-    drawGrayscale(calcRect(	-0.10936189822, 0.894921716226, 100, 100, 2.47/1000, 2.24/1000));
-    //drawGrayscale(graphics);
+    drawGrayscale(calcRect(-0.10936189822, 0.894921716226, 100, 100, 2.47 / 1000, 2.24 / 1000));
     return 0;
 }
-
-/**
- * Calculate mandelbrotSet values and save them into a 2D array
- * @param graphics
- */
-void mandelbrotSet(vector<vector<int>> &graphics) {
-    int graphicsVectorWidth = graphics.size();
-
-    for (int x = 0; x < graphicsVectorWidth; x++) {
-        int graphicsVectorHeight = graphics[x].size();
-        for (int y = 0; y < graphicsVectorHeight; y++) {
-            double xStart = x * ((2.47) / graphicsVectorWidth) - 2.0;
-            double yStart = -y * ((2.24) / graphicsVectorHeight) + 1.12;
-
-            int iteration = mandelbrot(xStart, yStart);
-            // x and y are reversed
-            graphics[y][x] = iteration;
-        }
-    }
-}
-
 
 /**
  * Display 2D array into terminal
