@@ -18,8 +18,9 @@ int main() {
 
     int width = 100, height = 100;
 
-    draw(calcRect(-2, -1.12, 0.47, 1.12, width, height));
+    //draw(calcRect(-2, -1.12, 0.47, 1.12, width, height));
     //drawGrayscale(calcRect(-2, -1.12, 0.47, 1.12, width, height));
-    drawGrayscale(calcRect(-0.10936189822, 0.894921716226, width, height, 2.47 / 1000, 2.24 / 1000));
+    //drawGrayscale(calcRect(-0.10936189822, 0.894921716226, width, height, 2.47 / 1000, 2.24 / 1000));
+    drawColors(calcRect(-0.10936189822, 0.894921716226, width, height, 2.47 / 1000, 2.24 / 1000));
     return 0;
 }
