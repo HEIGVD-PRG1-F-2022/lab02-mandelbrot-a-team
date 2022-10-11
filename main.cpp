@@ -19,7 +19,9 @@ int main() {
     vector<vector<int>> graphics(width, vector<int>(height));
     mandelbrotSet(graphics);
     //draw(graphics);
-    drawGrayscale(graphics);
+    drawGrayscale(calcRect(-2, -1.12, 0.47, 1.12, 100, 100));
+    //drawGrayscale(calcRect(0.42884, -0.231345, 1000, 1000, 2.47/25, 2.24/25));
+    //drawGrayscale(graphics);
     return 0;
 }
 
@@ -74,7 +76,7 @@ void draw(vector<vector<int>> &graphics) {
  * More information here : https://tforgione.fr/posts/ansi-escape-codes/
  * @param graphics
  */
-void drawGrayscale(vector<vector<int>> &graphics) {
+void drawGrayscale(const vector<vector<int>> &graphics) {
     for (int x = 0; x < graphics.size(); x++) {
         for (int y = 0; y < graphics[x].size(); y++) {
             int code = normalizeIterationRange(graphics[x][y], 232, 255);
@@ -102,4 +104,46 @@ int mandelbrot(double x0, double y0) {
         iteration++;
     }
     return iteration;
+}
+// Calcule le mandelbrot depuis (X1, Y1) a (X2, Y2) avec nX points entre X1 et X2
+// et nY points entre Y1 et Y2.
+/**
+ * Calcule le mandelbrot depuis (X1, Y1) a (X2, Y2)
+ * avec nX points entre X1 et X2 et nY points entre Y1 et Y2.
+ * @param X1 starting x coordinate
+ * @param Y1 starting y coordinate
+ * @param X2 ending x coordinate
+ * @param Y2 ending y coordinate
+ * @param nX number of points to calculate for X axis (resolution)
+ * @param nY number of points to calculate for Y axis (resolution)
+ * @return 2D vector of size nX*nY with number of iteration for each point
+ */
+vector<vector<int>> calcRect(double X1, double Y1, double X2, double Y2, int nX, int nY) {
+    vector<vector<int>> set(nX, vector<int>(nY, 0));
+
+    for(int x = 0; x < nX; x++) {
+        for(int y = 0; y < nY; y++) {
+            double x0 =  x * ((X2-X1) / nX) + X1;
+            double y0 =  y * ((Y2-Y1) / nY) + Y1;
+            set[y][x] = mandelbrot(x0,y0);
+        }
+    }
+
+    return set;
+
+}
+/**
+ * Calcule le mandelbrot autour de (X1, Y1) avec une largeur de dX et une hauteur de dY.
+ * Le vecteur a nX points en largeur et nY points en hauteur.
+ * @param X1 x coordinate of point around which we want to see the set
+ * @param Y1 y coordinate of point around which we want to see the set
+ * @param nX number of points to calculate for X axis (resolution)
+ * @param nY number of points to calculate for Y axis (resolution)
+ * @param dX size of interval around X1
+ * @param dY size of interval around Y1
+ * @return 2D vector of size nX*nY with number of iteration for each point
+ */
+vector<vector<int>> calcRect(double X1, double Y1, int nX, int nY, double dX, double dY) {
+
+    return calcRect(X1-dX/2, Y1-dY/2.0, X1 + dX/2.0, Y1 + dY/2, nX, nY);
 }
