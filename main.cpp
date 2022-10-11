@@ -6,7 +6,9 @@
 //
 
 #include <iostream>
+#include "util.h"
 #include "main.h"
+
 const int MAX_ITERATION = 7004;
 using namespace std;
 
@@ -44,19 +46,6 @@ void mandelbrotSet(vector<vector<int>> &graphics) {
     }
 }
 
-/**
- * Will normalize value between a new defined range
- * @param value the current value you want to match your new range
- * @param targetMin lowest limit of your new range
- * @param targetMax highest limit of your new range
- * @param currentMin lowest value possible of current value range
- * @param currentMax highest value possible of current value range
- * @return equivalent interpretation of the value in the specified new range
- */
-int normalizeIterationRange(int value, int targetMin, int targetMax, int currentMin = 0, int currentMax = MAX_ITERATION) {
-
-    return ((currentMax-value)*1.0-currentMin) / (1.0*currentMax - currentMin) * (1.0*targetMax-targetMin) + 1.0*targetMin;
-}
 
 /**
  * Display 2D array into terminal
@@ -79,7 +68,7 @@ void draw(vector<vector<int>> &graphics) {
 void drawGrayscale(const vector<vector<int>> &graphics) {
     for (int x = 0; x < graphics.size(); x++) {
         for (int y = 0; y < graphics[x].size(); y++) {
-            int code = normalizeIterationRange(graphics[y][x], 0, 232);
+            int code = normalizeRange(graphics[y][x], 0, 232);
             cout << "\x1b[38;5;" << to_string(code) << "m " << "*" << "\x1b[0m";
         }
         cout << endl;

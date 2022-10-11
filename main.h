@@ -13,7 +13,6 @@
 #include <windows.h> //for colored output in console if using Windows
 #endif
 
-int normalizeIterationRange(int value, int targetMin, int targetMax, int currentMin, int currentMax);
 int mandelbrot(double x0, double y0);
 void mandelbrotSet(std::vector<std::vector<int>> &);
 
