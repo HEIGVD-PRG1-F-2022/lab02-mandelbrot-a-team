@@ -1,5 +1,8 @@
 //
-// Created by Syra on 11.10.2022.
+// Project name : LAB 02 - Mandelbrot
+// Project members :
+// - Tranchida Rachel
+// - Aellen Quentin
 //
 
 #ifndef MANDELBROT_UTIL_H
