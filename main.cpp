@@ -7,8 +7,7 @@
 
 #include <iostream>
 #include "main.h"
-const int MAX_ITERATION = 1000;
-
+const int MAX_ITERATION = 7004;
 using namespace std;
 
 int main() {
@@ -19,8 +18,8 @@ int main() {
     vector<vector<int>> graphics(width, vector<int>(height));
     mandelbrotSet(graphics);
     //draw(graphics);
-    drawGrayscale(calcRect(-2, -1.12, 0.47, 1.12, 100, 100));
-    //drawGrayscale(calcRect(0.42884, -0.231345, 1000, 1000, 2.47/25, 2.24/25));
+    //drawGrayscale(calcRect(-2, -1.12, 0.47, 1.12, 1000, 1000));
+    drawGrayscale(calcRect(	-0.10936189822, 0.894921716226, 100, 100, 2.47/1000, 2.24/1000));
     //drawGrayscale(graphics);
     return 0;
 }
@@ -55,7 +54,8 @@ void mandelbrotSet(vector<vector<int>> &graphics) {
  * @return equivalent interpretation of the value in the specified new range
  */
 int normalizeIterationRange(int value, int targetMin, int targetMax, int currentMin = 0, int currentMax = MAX_ITERATION) {
-    return (value-currentMin) / (currentMax - currentMin) * (targetMax-targetMin) + targetMin;
+
+    return ((currentMax-value)*1.0-currentMin) / (1.0*currentMax - currentMin) * (1.0*targetMax-targetMin) + 1.0*targetMin;
 }
 
 /**
@@ -79,7 +79,7 @@ void draw(vector<vector<int>> &graphics) {
 void drawGrayscale(const vector<vector<int>> &graphics) {
     for (int x = 0; x < graphics.size(); x++) {
         for (int y = 0; y < graphics[x].size(); y++) {
-            int code = normalizeIterationRange(graphics[x][y], 232, 255);
+            int code = normalizeIterationRange(graphics[y][x], 0, 232);
             cout << "\x1b[38;5;" << to_string(code) << "m " << "*" << "\x1b[0m";
         }
         cout << endl;
@@ -125,7 +125,7 @@ vector<vector<int>> calcRect(double X1, double Y1, double X2, double Y2, int nX,
         for(int y = 0; y < nY; y++) {
             double x0 =  x * ((X2-X1) / nX) + X1;
             double y0 =  y * ((Y2-Y1) / nY) + Y1;
-            set[y][x] = mandelbrot(x0,y0);
+            set[x][y] = mandelbrot(x0,y0);
         }
     }
 
