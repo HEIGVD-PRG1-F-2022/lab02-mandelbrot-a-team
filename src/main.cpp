@@ -5,18 +5,18 @@
 // - Aellen Quentin
 //
 
-#include <iostream>
 #include "../include/fractal_mandelbrot.h"
 #include "../include/draw.h"
-#include "../include/main.h"
+#include "../include/util.h"
 
-const int MAX_ITERATION = 7004;
 using namespace std;
 
 int main() {
 #ifdef _WIN32
-    system(("chcp "s + std::to_string(CP_UTF8)).c_str()); //for colored output in console
+    SetWConsoleToUTF8();
 #endif
+    static const int MAX_ITERATION = 100;
+
     int width = 100, height = 100;
 
     //drawGrayscale(calcRect(-2, -1.12, 0.47, 1.12, 1000, 1000));
