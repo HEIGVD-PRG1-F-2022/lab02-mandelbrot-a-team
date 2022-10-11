@@ -16,7 +16,7 @@ using namespace std;
  * Display 2D array into terminal
  * @param graphics
  */
-void draw(vector <vector<int>> &graphics) {
+void draw(const vector <vector<int>> &graphics) {
     for (int x = 0; x < graphics.size(); x++) {
         for (int y = 0; y < graphics[x].size(); y++) {
             cout << (graphics[x][y] == 1000 ? '0' : '1');
@@ -31,6 +31,21 @@ void draw(vector <vector<int>> &graphics) {
  * @param graphics
  */
 void drawGrayscale(const vector <vector<int>> &graphics) {
+    for (int x = 0; x < graphics.size(); x++) {
+        for (int y = 0; y < graphics[x].size(); y++) {
+            int code = normalizeRange(graphics[y][x], 232, 255);
+            cout << "\x1b[38;5;" << to_string(code) << "m " << "*" << "\x1b[0m";
+        }
+        cout << endl;
+    }
+}
+
+/**
+ * Display 2D array into terminal with grayscale (need compatible terminal)
+ * More information here : https://tforgione.fr/posts/ansi-escape-codes/
+ * @param graphics
+ */
+void drawColors(const vector <vector<int>> &graphics) {
     for (int x = 0; x < graphics.size(); x++) {
         for (int y = 0; y < graphics[x].size(); y++) {
             int code = normalizeRange(graphics[y][x], 0, 232);

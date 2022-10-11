@@ -7,7 +7,7 @@
 
 #include <vector>
 
-void draw(std::vector<std::vector<int>> &);
+void draw(const std::vector<std::vector<int>> &);
 
 void drawGrayscale(const std::vector<std::vector<int>> &);
 
