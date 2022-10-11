@@ -3,4 +3,6 @@ project(Mandelbrot)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Mandelbrot main.cpp main.h util.cpp util.h fractal_mandelbrot.cpp fractal_mandelbrot.h)
+file(GLOB SOURCES include/*.h src/*.cpp)
+
+add_executable(Mandelbrot ${SOURCES})

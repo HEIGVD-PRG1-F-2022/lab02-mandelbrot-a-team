@@ -6,9 +6,9 @@
 //
 
 #include <iostream>
-#include "fractal_mandelbrot.h"
-#include "util.h"
-#include "main.h"
+#include "../include/fractal_mandelbrot.h"
+#include "../include/util.h"
+#include "../include/main.h"
 
 const int MAX_ITERATION = 7004;
 using namespace std;

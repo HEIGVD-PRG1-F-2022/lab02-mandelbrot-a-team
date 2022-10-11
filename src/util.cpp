@@ -5,7 +5,7 @@
 // - Aellen Quentin
 //
 
-#include "util.h"
+#include "../include/util.h"
 
 /**
  * Will normalize value between a new defined range

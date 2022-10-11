@@ -5,7 +5,7 @@
 // - Aellen Quentin
 //
 
-#include "fractal_mandelbrot.h"
+#include "../include/fractal_mandelbrot.h"
 
 using namespace std;
 
