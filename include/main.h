@@ -16,10 +16,5 @@
 
 #endif
 
-void mandelbrotSet(std::vector<std::vector<int>> &);
-
-void draw(std::vector<std::vector<int>> &);
-
-void drawGrayscale(const std::vector<std::vector<int>> &);
 
 #endif //MANDELBROT_MAIN_H
