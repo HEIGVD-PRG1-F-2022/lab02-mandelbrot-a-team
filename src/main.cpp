@@ -25,11 +25,12 @@ int main() {
     unsigned long long int zoom = 1;
 
     bool flag = true;
+    drawColors(juliaRect(-0.835, -0.232,2, width, height), MAX_ITERATION);
 
     while (flag) {
         system("cls");
 
-        drawColors(calcRect(x1, y1, width, height, 2.47 / zoom, 2.24 / zoom));
+        drawColors(calcRect(x1, y1, width, height, 2.47 / zoom, 2.24 / zoom), MAX_ITERATION);
 
         cout << "Navigation (w=Top, s=Bottom, a=Left, d=Right)\nZoom (+=Zoom in, -=Zoom out)\nExit (q)\n> ";
 

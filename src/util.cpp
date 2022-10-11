@@ -20,8 +20,9 @@ using namespace std;
  * @return equivalent interpretation of the value in the specified new range
  */
 int normalizeRange(int value, int targetMin, int targetMax, int currentMin, int currentMax) {
-    return ((currentMax - value) * 1.0 - currentMin) / (1.0 * currentMax - currentMin) * (1.0 * targetMax - targetMin) +
+    return ((currentMax-value) * 1.0 - currentMin) / (1.0 * currentMax - currentMin) * (1.0 * targetMax - targetMin) +
            1.0 * targetMin;
+
 }
 
 #ifdef _WIN32

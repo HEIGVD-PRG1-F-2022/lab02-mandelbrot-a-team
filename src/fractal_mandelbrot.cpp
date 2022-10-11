@@ -17,12 +17,12 @@ using namespace std;
  */
 int mandelbrot(double x0, double y0) {
     int iteration = 0;
-    double r = 0.0; // Real number
-    double i = 0.0; // Imaginary number
-    while ((r * r) + (i * i) <= 2 * 2 and iteration < MAX_ITERATION) {
-        double xtemp = (r * r) - (i * i) + x0;
-        i = 2 * r * i + y0;
-        r = xtemp;
+    double x = 0.0; // real part of complex number
+    double y = 0.0; // imaginary part of complex number
+    while ((x * x) + (y * y) <= 2 * 2 and iteration < MAX_ITERATION) {
+        double xtemp = (x * x) - (y * y) + x0;
+        y = 2 * x * y + y0;
+        x = xtemp;
 
         iteration++;
     }
@@ -72,12 +72,12 @@ vector<vector<int>> calcRect(double X1, double Y1, int nX, int nY, double dX, do
 
 int tricorn(double x0, double y0) {
     int iteration = 0;
-    double r = 0.0; // Real number
-    double i = 0.0; // Imaginary number
-    while ((r * r) + (i * i) < 2 * 2 and iteration < MAX_ITERATION) {
-        double xtemp = (r * r) - (i * i) + x0;
-        i = -(2 * r * i) + y0;
-        r = xtemp;
+    double x = 0.0; // real part of complex number
+    double y = 0.0; // imaginary part of complex number
+    while ((x * x) + (y * y) < 2 * 2 and iteration < MAX_ITERATION) {
+        double xtemp = (x * x) - (y * y) + x0;
+        y = -(2 * x * y) + y0;
+        x = xtemp;
 
         iteration++;
     }

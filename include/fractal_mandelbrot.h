@@ -11,6 +11,8 @@
 #include <vector>
 
 const static int MAX_ITERATION = 1000;
+const static std::vector<double> X1Y1 = {-2, 0.47};
+const static std::vector<double> X2Y2 = {-1.12, 1.12};
 int mandelbrot(double x0, double y0);
 int julia(double zx, double zy, double cx, double cy);
 int tricorn(double x0, double y0);
