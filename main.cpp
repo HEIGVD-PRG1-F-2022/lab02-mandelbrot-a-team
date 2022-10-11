@@ -7,11 +7,14 @@
 
 #include <iostream>
 #include "main.h"
-
 const int MAX_ITERATION = 1000;
+
 using namespace std;
 
 int main() {
+#ifdef _WIN32
+    system(("chcp "s + std::to_string(CP_UTF8)).c_str()); //for colored output in console
+#endif
     int width = 100, height = 100;
     vector<vector<int>> graphics(width, vector<int>(height));
     mandelbrotSet(graphics);

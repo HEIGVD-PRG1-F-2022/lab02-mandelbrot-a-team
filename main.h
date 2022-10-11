@@ -9,6 +9,9 @@
 #ifndef MANDELBROT_MAIN_H
 #define MANDELBROT_MAIN_H
 #include <vector>
+#ifdef _WIN32
+#include <windows.h> //for colored output in console if using Windows
+#endif
 
 int normalizeIterationRange(int value, int targetMin, int targetMax, int currentMin, int currentMax);
 int mandelbrot(double x0, double y0);
