@@ -23,4 +23,6 @@ void SetWConsoleToUTF8();
 
 int normalizeRange(int value, int targetMin, int targetMax, int currentMin = 0, int currentMax = 1000);
 
+void clearConsole();
+
 #endif //MANDELBROT_UTIL_H

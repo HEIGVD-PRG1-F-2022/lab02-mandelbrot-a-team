@@ -28,12 +28,7 @@ int main() {
     drawColors(juliaRect(-0.835, -0.232,2, width, height), MAX_ITERATION);
 
     while (flag) {
-#ifdef _WIN32
-        system("cls");
-#else
-        system("clear");
-#endif
-
+        clearConsole();
         drawColors(calcRect(x1, y1, width, height, 2.47 / zoom, 2.24 / zoom), MAX_ITERATION);
 
         cout << "Navigation (w=Top, s=Bottom, a=Left, d=Right)\nZoom (+=Zoom in, -=Zoom out)\nExit (q)\n> ";
@@ -65,7 +60,7 @@ int main() {
                 break;
             case 'q':
                 flag = false;
-                system("cls");
+                clearConsole();
                 break;
         }
     }
