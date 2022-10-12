@@ -12,6 +12,7 @@
 #include "../include/fractal_tricorn.h"
 #include "../include/draw.h"
 #include "../include/util.h"
+#include "../include/navigation.h"
 
 using namespace std;
 
@@ -30,9 +31,7 @@ int main() {
     drawColors(juliaRect(-0.835, -0.232, 2, width, height), DEFAULT_MAX_ITERATION);
 
     while (flag) {
-        clearConsole();
-        drawColors(calcRect(x1, y1, width, height, 2.47 / zoom, 2.24 / zoom), DEFAULT_MAX_ITERATION);
-        cout << "Navigation (w=Top, s=Bottom, a=Left, d=Right)\nZoom (+=Zoom in, -=Zoom out)\nExit (q)\n> ";
+        drawWithNavigation(calcRect(x1, y1, width, height, 2.47 / zoom, 2.24 / zoom), DEFAULT_MAX_ITERATION);
 
         cin >> input;
 
