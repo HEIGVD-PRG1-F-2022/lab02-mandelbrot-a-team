@@ -14,6 +14,10 @@
 
 void SetWConsoleToUTF8();
 
+#else
+
+#include <stdlib.h>
+
 #endif
 
 
