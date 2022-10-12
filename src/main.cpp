@@ -9,6 +9,7 @@
 #include <cmath>
 #include "../include/fractal_mandelbrot.h"
 #include "../include/fractal_julia.h"
+#include "../include/fractal_tricorn.h"
 #include "../include/draw.h"
 #include "../include/util.h"
 
