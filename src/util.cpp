@@ -30,7 +30,7 @@ int normalizeRange(int value, int targetMin, int targetMax, int currentMin, int 
 /**
  * Set Windows console format to UTF-8 to support display of colors
  */
-void SetWConsoleToUTF8() {
+void setWindowsConsoleToUTF8() {
     system(("chcp "s + std::to_string(CP_UTF8)).c_str()); //for colored output in console
 }
 

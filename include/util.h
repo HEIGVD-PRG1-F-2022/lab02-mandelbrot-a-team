@@ -12,7 +12,7 @@
 
 #include <windows.h>
 
-void SetWConsoleToUTF8();
+void setWindowsConsoleToUTF8();
 
 #else
 

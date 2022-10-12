@@ -15,7 +15,7 @@ using namespace std;
 
 int main() {
 #ifdef _WIN32
-    SetWConsoleToUTF8();
+    setWindowsConsoleToUTF8();
 #endif
 
     int width = 100, height = 100;
