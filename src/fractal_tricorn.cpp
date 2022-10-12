@@ -8,6 +8,8 @@
 
 #include "../include/fractal_tricorn.h"
 
+using namespace std;
+
 int tricorn(double x0, double y0) {
     int iteration = 0;
     double x = 0.0; // real part of complex number
