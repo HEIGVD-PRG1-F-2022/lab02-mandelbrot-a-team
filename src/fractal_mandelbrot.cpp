@@ -19,7 +19,7 @@ int mandelbrot(double x0, double y0) {
     int iteration = 0;
     double x = 0.0; // real part of complex number
     double y = 0.0; // imaginary part of complex number
-    while ((x * x) + (y * y) <= 2 * 2 and iteration < MAX_ITERATION) {
+    while ((x * x) + (y * y) <= 2 * 2 and iteration < DEFAULT_MAX_ITERATION) {
         double xtemp = (x * x) - (y * y) + x0;
         y = 2 * x * y + y0;
         x = xtemp;
@@ -74,7 +74,7 @@ int tricorn(double x0, double y0) {
     int iteration = 0;
     double x = 0.0; // real part of complex number
     double y = 0.0; // imaginary part of complex number
-    while ((x * x) + (y * y) < 2 * 2 and iteration < MAX_ITERATION) {
+    while ((x * x) + (y * y) < 2 * 2 and iteration < DEFAULT_MAX_ITERATION) {
         double xtemp = (x * x) - (y * y) + x0;
         y = -(2 * x * y) + y0;
         x = xtemp;
@@ -83,42 +83,18 @@ int tricorn(double x0, double y0) {
     }
     return iteration;
 }
+
 vector<vector<int>> tricornRect(double X1, double Y1, double X2, double Y2, int nX, int nY) {
     vector<vector<int>> set(nX, vector<int>(nY, 0));
 
-    for(int x = 0; x < nX; x++) {
-        for(int y = 0; y < nY; y++) {
-            double x0 =  x * ((X2-X1) / nX) + X1;
-            double y0 =  y * ((Y2-Y1) / nY) + Y1;
-            set[x][y] = tricorn(x0,y0);
+    for (int x = 0; x < nX; x++) {
+        for (int y = 0; y < nY; y++) {
+            double x0 = x * ((X2 - X1) / nX) + X1;
+            double y0 = y * ((Y2 - Y1) / nY) + Y1;
+            set[x][y] = tricorn(x0, y0);
         }
     }
 
     return set;
 
-}
-
-vector<vector<int>> juliaRect(double cx, double cy, double R, int nX, int nY) {
-    vector<vector<int>> set(nX, vector<int>(nY, 0));
-    for(int x = 0; x < nX; x++) {
-        for(int y = 0; y < nY; y++) {
-            double zx =  x * ((2*R) / nX) - R;
-            double zy =  y * ((2*R) / nY) -R;
-            set[x][y] = julia(zx,zy, cx, cy);
-        }
-    }
-
-    return set;
-}
-
-int julia(double zx, double zy, double cx, double cy) {
-    int iteration = 0;
-    while ((zx * zx) + (zy * zy) <= 2 * 2 and iteration < MAX_ITERATION) {
-        double xtemp = (zx * zx) - (zy * zy) + cx;
-        zy = 2 * zx * zy + cy;
-        zx = xtemp;
-
-        iteration++;
-    }
-    return iteration;
 }

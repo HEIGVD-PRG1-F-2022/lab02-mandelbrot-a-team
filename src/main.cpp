@@ -8,6 +8,7 @@
 #include <iostream>
 #include <cmath>
 #include "../include/fractal_mandelbrot.h"
+#include "../include/fractal_julia.h"
 #include "../include/draw.h"
 #include "../include/util.h"
 
@@ -25,12 +26,11 @@ int main() {
     unsigned long long int zoom = 1;
 
     bool flag = true;
-    drawColors(juliaRect(-0.835, -0.232,2, width, height), MAX_ITERATION);
+    drawColors(juliaRect(-0.835, -0.232, 2, width, height), DEFAULT_MAX_ITERATION);
 
     while (flag) {
         clearConsole();
-        drawColors(calcRect(x1, y1, width, height, 2.47 / zoom, 2.24 / zoom), MAX_ITERATION);
-
+        drawColors(calcRect(x1, y1, width, height, 2.47 / zoom, 2.24 / zoom), DEFAULT_MAX_ITERATION);
         cout << "Navigation (w=Top, s=Bottom, a=Left, d=Right)\nZoom (+=Zoom in, -=Zoom out)\nExit (q)\n> ";
 
         cin >> input;
@@ -49,11 +49,11 @@ int main() {
                 x1 += 0.2 / zoom;
                 break;
             case '+':
-                if(zoom < zoom*pow(2,64))
-                zoom *= 2;
+                if (zoom < zoom * pow(2, 64))
+                    zoom *= 2;
                 break;
             case '-':
-                if(zoom == 1) {
+                if (zoom == 1) {
                     break;
                 }
                 zoom /= 2;
