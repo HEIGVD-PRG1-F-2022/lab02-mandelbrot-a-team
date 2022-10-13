@@ -25,7 +25,7 @@ int main() {
 
     char input;
     double x1 = -0.761574, y1 = -0.0847596;
-    unsigned long long int zoom = 1;
+    unsigned long long int zoom = 3125;
 
     bool flag = true;
     drawColors(juliaRect(-0.835, -0.232, 2, width, height), DEFAULT_MAX_ITERATION);

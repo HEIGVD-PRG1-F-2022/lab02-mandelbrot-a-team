@@ -23,6 +23,8 @@ void setWindowsConsoleToUTF8();
 
 int normalizeRange(int value, int targetMin, int targetMax, int currentMin = 0, int currentMax = 1000);
 
+float normalizeRGB(int iteration, int maxIteration);
+
 void clearConsole();
 
 #endif //MANDELBROT_UTIL_H
