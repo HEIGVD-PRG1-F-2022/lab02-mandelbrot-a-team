@@ -12,8 +12,6 @@
 
 void draw(const std::vector<std::vector<int>> &);
 
-void drawRGB(const std::vector<std::vector<int>> &, int);
-
 void drawGrayscale(const std::vector<std::vector<int>> &);
 
 void drawColors(const std::vector<std::vector<int>> &, int);

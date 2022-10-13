@@ -25,15 +25,6 @@ int normalizeRange(int value, int targetMin, int targetMax, int currentMin, int 
            1.0 * targetMin;
 }
 
-float normalizeRGB(int iteration, int maxIteration){
-    double s = 3;
-    double a = pow((double)iteration/maxIteration,s);
-    double N = 255;
-    double b = pow(a*N, 1.5);
-    double res = fmod(b, N);
-    return res;
-}
-
 #ifdef _WIN32
 
 /**

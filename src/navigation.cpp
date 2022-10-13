@@ -19,6 +19,6 @@ void displayNavigationCommandsHelper() {
 
 void drawWithNavigation(const vector<vector<int>> &fractalSet, int maxIteration) {
     clearConsole();
-    drawRGB(fractalSet, maxIteration);
+    drawColors(fractalSet, maxIteration);
     displayNavigationCommandsHelper();
 }

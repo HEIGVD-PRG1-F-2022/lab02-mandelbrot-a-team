@@ -61,21 +61,3 @@ void drawColors(const vector <vector<int>> &fractalSet, int max_iteration) {
     }
     cout << content;
 }
-
-/**
- * Display 2D array into terminal with grayscale (need compatible terminal)
- * More information here : https://tforgione.fr/posts/ansi-escape-codes/
- * @param fractalSet
- */
-void drawRGB(const vector <vector<int>> &fractalSet, int max_iteration) {
-    string content = "";
-    for (int x = 0; x < fractalSet.size(); x++) {
-        for (int y = 0; y < fractalSet[x].size(); y++) {
-            float v = normalizeRGB(fractalSet[y][x], max_iteration);
-
-            content += "\x1b[38;2;" + to_string((int)(v*255)) + ";" + to_string((int)(v*255)) + ";" + to_string((int)(v*255)) + "m *\x1b[0m";
-        }
-        content += "\n";
-    }
-    cout << content;
-}
