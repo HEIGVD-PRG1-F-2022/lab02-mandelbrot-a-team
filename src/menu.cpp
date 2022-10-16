@@ -17,6 +17,9 @@ using namespace std;
 
 static Fractal fractalSelected = Mandelbrot;
 
+/**
+ * Display main menu into the terminal with a list of action todo
+ */
 void showMainMenu() {
     vector<string> options = {"Select your fractal", "Free navigation", "Auto zoom"};
 
@@ -55,6 +58,9 @@ void showMainMenu() {
     }
 }
 
+/**
+ * Display fractal menu into the terminal fractal to select
+ */
 void showFractalMenu() {
     vector<string> options = {"Mandelbrot", "Julia", "Tricorn"};
 
@@ -91,6 +97,11 @@ void showFractalMenu() {
     }
 }
 
+/**
+ * Check the input of user based on the number of options available
+ * @param optionsList reference list of all the option the user can select
+ * @return value choose by the user into the range of available options
+ */
 short askChoice(const vector<string> &optionsList) {
     short maxValue = optionsList.size();
     short input;
