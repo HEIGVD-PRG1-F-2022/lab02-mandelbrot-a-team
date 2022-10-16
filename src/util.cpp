@@ -36,16 +36,25 @@ void setWindowsConsoleToUTF8() {
 
 #endif
 
+#ifdef _WIN32
+
 /**
  * Clear console with system cmd based on if it's a Windows or a UNIX system
  */
 void clearConsole() {
-    char cmd[] = "clear";
-#ifdef _WIN32
-    cmd = "cls"
-#endif
-    system(cmd);
+    system("cls");
 }
+
+#else
+
+/**
+ * Clear console with system cmd based on if it's a Windows or a UNIX system
+ */
+void clearConsole() {
+    system("clear");
+}
+#endif
+
 
 void setConsoleCursorToStart() {
 #ifdef _WIN32
