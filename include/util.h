@@ -25,6 +25,8 @@ int normalizeRange(int value, int targetMin, int targetMax, int currentMin = 0, 
 
 void clearConsole();
 
+void setConsoleCursorToStart();
+
 void wait(int milliseconds);
 
 #endif //MANDELBROT_UTIL_H

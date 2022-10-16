@@ -47,6 +47,17 @@ void clearConsole() {
     system(cmd);
 }
 
+void setConsoleCursorToStart() {
+#ifdef _WIN32
+    COORD Coord;
+    Coord.X = 0;
+    Coord.Y = 0;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Coord);
+#else
+    printf("\033[%d;%dH", 0+1, 0+1);
+#endif
+}
+
 void wait(int milliseconds) {
 #ifdef _WIN32
     Sleep(milliseconds);
