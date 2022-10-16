@@ -13,6 +13,7 @@
 #include "../include/draw.h"
 #include "../include/util.h"
 #include "../include/navigation.h"
+#include "../include/menu.h"
 
 using namespace std;
 
@@ -21,7 +22,11 @@ int main() {
     setWindowsConsoleToUTF8();
 #endif
 
-    int width = 100, height = 100;
+    while(true) {
+        showMainMenu();
+    }
+
+    /*int width = 100, height = 100;
 
     char input;
     double x1 = -0.761574, y1 = -0.0847596;
@@ -63,7 +68,7 @@ int main() {
                 clearConsole();
                 break;
         }
-    }
+    }*/
 
     //draw(calcRect(-2, -1.12, 0.47, 1.12, width, height));
     //drawGrayscale(calcRect(-2, -1.12, 0.47, 1.12, width, height));
