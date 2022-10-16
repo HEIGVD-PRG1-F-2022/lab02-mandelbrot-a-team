@@ -30,8 +30,8 @@ int mandelbrot(double x0, double y0) {
 }
 
 /**
- * Calcule le mandelbrot depuis (X1, Y1) a (X2, Y2)
- * avec nX points entre X1 et X2 et nY points entre Y1 et Y2.
+ * Calculate the mandelbrot from coords (X1, Y1) to (X2, Y2)
+ * with nX points between X1 and X2 and nY points between Y1 et Y2.
  * @param X1 starting x coordinate
  * @param Y1 starting y coordinate
  * @param X2 ending x coordinate
@@ -55,8 +55,8 @@ vector<vector<int>> calcRect(double X1, double Y1, double X2, double Y2, int nX,
 }
 
 /**
- * Calcule le mandelbrot autour de (X1, Y1) avec une largeur de dX et une hauteur de dY.
- * Le vecteur a nX points en largeur et nY points en hauteur.
+ * Calculate the mandelbrot around coords (X1, Y1) with a width of dX and a height of dY.
+ * The vector have nX points in width and nY points in height.
  * @param X1 x coordinate of point around which we want to see the set
  * @param Y1 y coordinate of point around which we want to see the set
  * @param nX number of points to calculate for X axis (resolution)
