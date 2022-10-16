@@ -7,15 +7,12 @@
 
 #include "../include/menu.h"
 #include "../include/util.h"
+#include "../include/navigation.h"
 #include <iostream>
 #include <string>
 #include <vector>
-#include <iomanip>
 
 using namespace std;
-
-
-static Fractal fractalSelected = Mandelbrot;
 
 /**
  * Display main menu into the terminal with a list of action todo
@@ -48,7 +45,7 @@ void showMainMenu() {
             break;
         }
         case 2: {
-            cout << "case 2";
+            startNavigation();
             break;
         }
         case 3: {

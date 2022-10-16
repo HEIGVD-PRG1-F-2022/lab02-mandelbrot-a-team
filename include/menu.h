@@ -23,6 +23,8 @@ const std::vector<std::string> FractalName = {
         "Tricorn"
 };
 
+static Fractal fractalSelected = Mandelbrot;
+
 void showMainMenu();
 
 void showFractalMenu();
