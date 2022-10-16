@@ -20,7 +20,9 @@ static Fractal fractalSelected = Mandelbrot;
 void showMainMenu() {
     vector<string> options = {"Select your fractal", "Free navigation", "Auto zoom"};
 
-    setConsoleCursorToStart();
+    clearConsole();
+
+    cout << "** Fractal set to " << FractalName[fractalSelected] << " **" << endl;
 
     cout << "--- Menu ---" << endl;
 
@@ -36,11 +38,10 @@ void showMainMenu() {
 
     switch (response) {
         case 0: {
-            return;
-            break;
+            exit(0);
         }
         case 1: {
-            cout << "case 1";
+            showFractalMenu();
             break;
         }
         case 2: {
@@ -49,6 +50,42 @@ void showMainMenu() {
         }
         case 3: {
             cout << "case 3";
+            break;
+        }
+    }
+}
+
+void showFractalMenu() {
+    vector<string> options = {"Mandelbrot", "Julia", "Tricorn"};
+
+    clearConsole();
+
+    cout << "--- Fractal Menu ---" << endl;
+
+    for (int x = 0; x <= options.size(); x++) {
+        if (x == 0) {
+            cout << x << ") Exit" << endl;
+            continue;
+        }
+        cout << x << ") " << options[x - 1] << endl;
+    }
+
+    short response = askChoice(options);
+
+    switch (response) {
+        case 0: {
+            return;
+        }
+        case 1: {
+            fractalSelected = Fractal::Mandelbrot;
+            break;
+        }
+        case 2: {
+            fractalSelected = Fractal::Julia;
+            break;
+        }
+        case 3: {
+            fractalSelected = Fractal::Tricorn;
             break;
         }
     }

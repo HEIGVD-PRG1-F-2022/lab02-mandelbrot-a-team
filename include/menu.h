@@ -17,7 +17,15 @@ enum Fractal {
     Tricorn
 };
 
+const std::vector<std::string> FractalName = {
+        "Mandelbrot",
+        "Julia",
+        "Tricorn"
+};
+
 void showMainMenu();
+
+void showFractalMenu();
 
 short askChoice(const std::vector<std::string> &);
 
