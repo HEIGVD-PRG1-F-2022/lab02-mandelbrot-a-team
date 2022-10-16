@@ -19,11 +19,12 @@
 using namespace std;
 
 void startNavigation() {
-    double x1 = X1Y1[0], y1 = X1Y1[1];
+    const vector<double> initialXY = coords;
+    const double initialZoom = zoom;
+    double x = coords[0], y = coords[1];
 
     while (true) {
         char input;
-        double x = coords[0], y = coords[1];
         vector<string> options = {"Select your fractal", "Free navigation", "Auto zoom"};
 
         setConsoleCursorToStart();
@@ -32,7 +33,7 @@ void startNavigation() {
 
         switch (fractalSelected) {
             case Fractal::Mandelbrot:
-                fractalSet = calcRect(x1, y1, width, height, 2.47 / zoom, 2.24 / zoom);
+                fractalSet = calcRect(x, y, width, height, 2.47 / zoom, 2.24 / zoom);
                 break;
             case Fractal::Julia:
                 // TODO
@@ -49,16 +50,16 @@ void startNavigation() {
 
         switch (input) {
             case 'w':
-                y1 -= getZoomScale();
+                y -= getZoomScale();
                 break;
             case 's':
-                y1 += getZoomScale();
+                y += getZoomScale();
                 break;
             case 'a':
-                x1 -= getZoomScale();
+                x -= getZoomScale();
                 break;
             case 'd':
-                x1 += getZoomScale();
+                x += getZoomScale();
                 break;
             case '+':
                 if (zoom < zoom * pow(2, 64))
@@ -71,12 +72,14 @@ void startNavigation() {
                 zoom /= 2;
                 break;
             case 'q':
+                coords = initialXY;
+                zoom = initialZoom;
                 return;
         }
     }
 }
 
-static double getZoomScale() {
+double getZoomScale() {
     return zoomScale / zoom;
 }
 

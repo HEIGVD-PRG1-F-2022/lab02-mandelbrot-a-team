@@ -14,7 +14,7 @@ int main() {
 #ifdef _WIN32
     setWindowsConsoleToUTF8();
 #endif
-    while(true) {
+    while (true) {
         showMainMenu();
     }
     return 0;

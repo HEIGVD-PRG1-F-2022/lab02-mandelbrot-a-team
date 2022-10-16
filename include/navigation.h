@@ -18,7 +18,7 @@ static double zoom = 1;
 
 static double zoomScale = 0.2;
 
-static double getZoomScale();
+double getZoomScale();
 
 void startNavigation();
 
