@@ -35,8 +35,8 @@ void draw(const vector <vector<int>> &fractalSet) {
  */
 void drawGrayscale(const vector <vector<int>> &fractalSet) {
     string content = "";
-    for (int x = 0; x < fractalSet.size(); x++) {
-        for (int y = 0; y < fractalSet[x].size(); y++) {
+    for (int x = 0; x < fractalSet[0].size(); x++) {
+        for (int y = 0; y < fractalSet.size(); y++) {
             int code = normalizeRange(fractalSet[y][x], 232, 255);
             content += "\x1b[38;5;" + to_string(code) + "m  *\x1b[0m";
         }
@@ -52,8 +52,8 @@ void drawGrayscale(const vector <vector<int>> &fractalSet) {
  */
 void drawColors(const vector <vector<int>> &fractalSet, int max_iteration) {
     string content = "";
-    for (int x = 0; x < fractalSet.size(); x++) {
-        for (int y = 0; y < fractalSet[x].size(); y++) {
+    for (int x = 0; x < fractalSet[0].size(); x++) {
+        for (int y = 0; y < fractalSet.size(); y++) {
             int code = normalizeRange(fractalSet[y][x], 0, 232, 0, max_iteration);
             content += "\x1b[38;5;" + to_string(code) + "m *\x1b[0m";
         }

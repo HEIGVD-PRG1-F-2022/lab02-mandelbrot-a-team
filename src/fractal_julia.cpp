@@ -33,3 +33,7 @@ vector<vector<int>> juliaRect(double cx, double cy, double R, int nX, int nY) {
     }
     return set;
 }
+vector<vector<int>> juliaRect(double X1, double Y1, int nX, int nY, double dX, double dY) {
+
+    return juliaRect(X1 - dX / 2, Y1 - dY / 2.0, X1 + dX / 2.0, Y1 + dY / 2, nX, nY);
+}

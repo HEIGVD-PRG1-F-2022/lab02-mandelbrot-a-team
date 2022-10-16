@@ -38,3 +38,8 @@ vector <vector<int>> tricornRect(double X1, double Y1, double X2, double Y2, int
     return set;
 
 }
+    vector<vector<int>> tricornRect(double X1, double Y1, int nX, int nY, double dX, double dY) {
+
+        return tricornRect(X1 - dX / 2, Y1 - dY / 2.0, X1 + dX / 2.0, Y1 + dY / 2, nX, nY);
+    }
+
