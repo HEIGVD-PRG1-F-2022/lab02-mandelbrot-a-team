@@ -73,7 +73,7 @@ void showFractalMenu() {
         cout << x << ") " << options[x - 1] << endl;
     }
 
-    short int response = askChoice(options);
+    short response = askChoice(options);
 
     switch (response) {
         case 0:

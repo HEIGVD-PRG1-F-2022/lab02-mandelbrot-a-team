@@ -29,17 +29,18 @@ void startNavigation() {
 
         setConsoleCursorToStart();
 
-        vector<vector<int>> fractalSet;
+         vector<vector<int>> fractalSet;
 
         switch (fractalSelected) {
             case Fractal::Mandelbrot:
-                fractalSet = calcRect(x, y, width, height, (X2-X1) / zoom, (Y2-Y1) / zoom);
+                fractalSet = calcRect(x, y, width, height, (X2_M-X1_M) / zoom, (Y2_M-Y1_M) / zoom);
                 break;
             case Fractal::Julia:
-              fractalSet = juliaRect(-0.512511498387847167, 0.521295573094847167, 2/zoom, 100, 100);// TODO
+              fractalSet = juliaRect(CX_J, CY_J, R_J/zoom, width, height);
                 break;
             case Fractal::Tricorn:
-                fractalSet = tricornRect(-1.25, 0, 100, 100, 3.5/zoom, 2/zoom);// TODO
+                fractalSet = tricornRect((X2_T-X1_T)/2.0 + X1_T, (Y2_T-Y1_T)/2.0 + Y1_T,
+                                         100, 100, (X2_T-X1_T)/zoom, (Y2_T-Y1_T)/zoom);
                 break;
         }
 

@@ -31,4 +31,5 @@ void showFractalMenu();
 
 short askChoice(const std::vector<std::string> &);
 
+
 #endif //MANDELBROT_MENU_H
