@@ -25,7 +25,7 @@ void startAnimation() {
     const double initialZoom = zoom;
     double x = 0.0, y = 0.0;
 
-    const double maxZoom = zoom * pow(2, 16);
+    const double maxZoom = zoom * pow(2, 64);
 
     while (true) {
         if (zoom >= maxZoom) {
