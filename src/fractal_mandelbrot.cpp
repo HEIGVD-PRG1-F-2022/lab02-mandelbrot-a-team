@@ -57,15 +57,15 @@ vector<vector<int>> calcRect(double X1, double Y1, double X2, double Y2, int nX,
 /**
  * Calculate the mandelbrot around coords (X1, Y1) with a width of dX and a height of dY.
  * The vector have nX points in width and nY points in height.
- * @param X1 x coordinate of point around which we want to see the set
- * @param Y1 y coordinate of point around which we want to see the set
+ * @param XC x coordinate of point around which we want to see the set
+ * @param YC y coordinate of point around which we want to see the set
  * @param nX number of points to calculate for X axis (resolution)
  * @param nY number of points to calculate for Y axis (resolution)
  * @param dX size of interval around X1
  * @param dY size of interval around Y1
  * @return 2D vector of size nX*nY with number of iteration for each point
  */
-vector<vector<int>> calcRect(double X1, double Y1, int nX, int nY, double dX, double dY) {
+vector<vector<int>> calcRect(double XC, double YC, int nX, int nY, double dX, double dY) {
 
-    return calcRect(X1 - dX / 2, Y1 - dY / 2.0, X1 + dX / 2.0, Y1 + dY / 2, nX, nY);
+    return calcRect(XC - dX / 2, YC - dY / 2.0, XC + dX / 2.0, YC + dY / 2, nX, nY);
 }

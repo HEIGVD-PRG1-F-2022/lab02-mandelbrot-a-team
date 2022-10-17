@@ -9,7 +9,12 @@
 #include "../include/fractal_tricorn.h"
 
 using namespace std;
-
+/**
+ * Calculate maximum number of mandelbrot iteration before exceeding MAX_ITERATION or if numbers have a tendency to be infinite
+ * @param x0 starting x offset
+ * @param y0 starting y offset
+ * @return number of iteration
+ */
 int tricorn(double x0, double y0) {
     int iteration = 0;
     double x = 0.0; // real part of complex number
@@ -24,6 +29,17 @@ int tricorn(double x0, double y0) {
     return iteration;
 }
 
+/**
+ * Calculate the tricorn set from coords (X1, Y1) to (X2, Y2)
+ * with nX points between X1 and X2 and nY points between Y1 et Y2.
+ * @param X1 starting x coordinate
+ * @param Y1 starting y coordinate
+ * @param X2 ending x coordinate
+ * @param Y2 ending y coordinate
+ * @param nX number of points to calculate for X axis (resolution)
+ * @param nY number of points to calculate for Y axis (resolution)
+ * @return 2D vector of size nX*nY with number of iteration for each point
+ */
 vector <vector<int>> tricornRect(double X1, double Y1, double X2, double Y2, int nX, int nY) {
     vector <vector<int>> set(nX, vector<int>(nY, 0));
 
@@ -38,8 +54,19 @@ vector <vector<int>> tricornRect(double X1, double Y1, double X2, double Y2, int
     return set;
 
 }
-    vector<vector<int>> tricornRect(double X1, double Y1, int nX, int nY, double dX, double dY) {
+/**
+ * Calculate the tricorn around coords (X1, Y1) with a width of dX and a height of dY.
+ * The vector have nX points in width and nY points in height.
+ * @param XC x coordinate of point around which we want to see the set
+ * @param YC y coordinate of point around which we want to see the set
+ * @param nX number of points to calculate for X axis (resolution)
+ * @param nY number of points to calculate for Y axis (resolution)
+ * @param dX size of interval around X1
+ * @param dY size of interval around Y1
+ * @return 2D vector of size nX*nY with number of iteration for each point
+ */
+    vector<vector<int>> tricornRect(double XC, double YC, int nX, int nY, double dX, double dY) {
 
-        return tricornRect(X1 - dX / 2.0, Y1 - dY / 2.0, X1 + dX / 2.0, Y1 + dY / 2.0, nX, nY);
+        return tricornRect(XC - dX / 2.0, YC - dY / 2.0, XC + dX / 2.0, YC + dY / 2.0, nX, nY);
     }
 
