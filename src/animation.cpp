@@ -24,7 +24,7 @@ void startAnimation()
     const double initialZoom = zoom;
     double x = 0.0, y = 0.0;
 
-    const double maxZoom = zoom * pow(2, 64);
+    const double maxZoom = zoom * pow(2, 20);
 
     while (true)
     {
@@ -37,7 +37,7 @@ void startAnimation()
                 break;
             break;
         }
-        
+
         vector<string> options = {"Select your fractal", "Free navigation", "Auto zoom"};
 
         vector<vector<int>> fractalSet;
@@ -59,7 +59,7 @@ void startAnimation()
         setConsoleCursorToStart();
         drawColors(fractalSet, DEFAULT_MAX_ITERATION);
         zoom *= 1.1;
-        wait(100);
+        wait(50);
     }
     return;
 }
