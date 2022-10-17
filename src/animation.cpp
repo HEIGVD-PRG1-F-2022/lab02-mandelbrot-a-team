@@ -5,7 +5,6 @@
 // - Aellen Quentin
 //
 
-
 #include <vector>
 #include <cmath>
 #include <iostream>
@@ -16,7 +15,6 @@
 #include "../include/fractal_mandelbrot.h"
 #include "../include/fractal_julia.h"
 #include "../include/fractal_tricorn.h"
-
 
 using namespace std;
 
@@ -32,10 +30,10 @@ void startAnimation() {
             zoom = initialZoom;
             cout << "> Press enter a key to leave";
             cin.ignore();
-            if(cin.get() == '\n') break;
+            if (cin.get() == '\n')
+                break;
             break;
         }
-        zoom *= 2;
 
         char input;
         vector<string> options = {"Select your fractal", "Free navigation", "Auto zoom"};
@@ -58,7 +56,7 @@ void startAnimation() {
         setConsoleCursorToStart();
         drawColors(fractalSet, DEFAULT_MAX_ITERATION);
         zoom *= 1.1;
-        wait(200);
+        wait(100);
     }
     return;
 }
