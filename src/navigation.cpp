@@ -35,10 +35,13 @@ void startNavigation() {
                 fractalSet = calcRect(x, y, width, height, (X2_M-X1_M) / zoom, (Y2_M-Y1_M) / zoom);
                 break;
             case Fractal::Julia:
-              fractalSet = juliaRect(CX_J, CY_J, R_J/zoom, width, height);
+              fractalSet = juliaRect(x, y, CX_J, CY_J, R_J/zoom, width, height);
                 break;
             case Fractal::Tricorn:
-                fractalSet = tricornRect((X2_T-X1_T)/2.0 + X1_T, (Y2_T-Y1_T)/2.0 + Y1_T,
+                x = (X2_T-X1_T)/2.0 + X1_T;
+                y = (Y2_T-Y1_T)/2.0 + Y1_T;
+
+                fractalSet = tricornRect(x, y,
                                          100, 100, (X2_T-X1_T)/zoom, (Y2_T-Y1_T)/zoom);
                 break;
         }

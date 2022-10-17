@@ -22,12 +22,12 @@ int julia(double zx, double zy, double cx, double cy) {
     return iteration;
 }
 
-std::vector<std::vector<int>> juliaRect(double cx, double cy, double R, int nX, int nY) {
+std::vector<std::vector<int>> juliaRect(double zx0, double zy0, double cx, double cy, double R, int nX, int nY) {
     std::vector<std::vector<int>> set(nX, std::vector<int>(nY, 0));
     for (int x = 0; x < nX; x++) {
         for (int y = 0; y < nY; y++) {
-            double zx = x * ((2 * R) / nX) - R;
-            double zy = y * ((2 * R) / nY) - R;
+            double zx = x * ((2 * R) / nX) - R + zx0;
+            double zy = y * ((2 * R) / nY) - R+ zy0;
             set[x][y] = julia(zx, zy, cx, cy);
         }
     }
