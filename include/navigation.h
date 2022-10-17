@@ -10,14 +10,6 @@
 
 #include <vector>
 
-static int width = 100, height = 100;
-
-
-
-static double zoom = 1;
-
-static double zoomScale = 0.2;
-
 double getZoomScale();
 
 void startNavigation();

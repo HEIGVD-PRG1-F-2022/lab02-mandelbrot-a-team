@@ -8,6 +8,7 @@
 #include "../include/menu.h"
 #include "../include/util.h"
 #include "../include/navigation.h"
+#include "../include/animation.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -49,7 +50,7 @@ void showMainMenu() {
             break;
         }
         case 3: {
-            cout << "case 3";
+            startAnimation();
             break;
         }
     }

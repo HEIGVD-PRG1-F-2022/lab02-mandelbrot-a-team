@@ -11,5 +11,10 @@
 
 const static int DEFAULT_MAX_ITERATION = 1000;
 
+static int width = 100, height = 100;
+
+static double zoom = 1;
+
+static double zoomScale = 0.2;
 
 #endif //MANDELBROT_FRACTAL_H
