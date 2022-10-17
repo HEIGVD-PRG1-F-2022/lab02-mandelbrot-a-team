@@ -110,3 +110,6 @@ short askChoice(const vector<string> &optionsList) {
 
     return input;
 }
+Fractal getFractalSelected() {
+    return fractalSelected;
+}

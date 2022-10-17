@@ -30,8 +30,7 @@ void startNavigation() {
         setConsoleCursorToStart();
 
          vector<vector<int>> fractalSet;
-
-        switch (fractalSelected) {
+        switch (getFractalSelected()) {
             case Fractal::Mandelbrot:
                 fractalSet = calcRect(x, y, width, height, (X2_M-X1_M) / zoom, (Y2_M-Y1_M) / zoom);
                 break;
