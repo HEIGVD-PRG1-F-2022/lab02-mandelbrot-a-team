@@ -10,7 +10,9 @@
 #define MANDELBROT_FRACTAL_H
 
 const static int DEFAULT_MAX_ITERATION = 1000;
-const static std::vector<double> X1Y1 = {-2, 0.47};
-const static std::vector<double> X2Y2 = {-1.12, 1.12};
+const static double X1 = -2.0;
+const static double X2 = 0.47;
+const static double Y1 = -1.12;
+const static double Y2 = 1.12;
 
 #endif //MANDELBROT_FRACTAL_H

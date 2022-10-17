@@ -33,13 +33,13 @@ void startNavigation() {
 
         switch (fractalSelected) {
             case Fractal::Mandelbrot:
-                fractalSet = calcRect(x, y, width, height, 2.47 / zoom, 2.24 / zoom);
+                fractalSet = calcRect(x, y, width, height, (X2-X1) / zoom, (Y2-Y1) / zoom);
                 break;
             case Fractal::Julia:
-              // TODO
+              fractalSet = juliaRect(-0.512511498387847167, 0.521295573094847167, 2/zoom, 100, 100);// TODO
                 break;
             case Fractal::Tricorn:
-                // TODO
+                fractalSet = tricornRect(-1.25, 0, 100, 100, 3.5/zoom, 2/zoom);// TODO
                 break;
         }
 

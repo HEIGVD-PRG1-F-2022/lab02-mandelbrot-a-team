@@ -14,5 +14,4 @@
 int julia(double zx, double zy, double cx, double cy);
 
 std::vector<std::vector<int>> juliaRect(double cx, double cy, double R, int nX, int nY);
-
 #endif //MANDELBROT_FRACTAL_JULIA_H

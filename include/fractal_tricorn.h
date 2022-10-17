@@ -12,8 +12,9 @@
 #include <vector>
 #include "fractal.h"
 
+
 int tricorn(double x0, double y0);
 
 std::vector<std::vector<int>> tricornRect(double X1, double Y1, double X2, double Y2, int nX, int nY);
-
+std::vector<std::vector<int>> tricornRect(double X1, double Y1, int nX, int nY, double dX, double dY);
 #endif //MANDELBROT_FRACTAL_TRICORN_H

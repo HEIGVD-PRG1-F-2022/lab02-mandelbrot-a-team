@@ -73,24 +73,24 @@ void showFractalMenu() {
         cout << x << ") " << options[x - 1] << endl;
     }
 
-    short response = askChoice(options);
+    short int response = askChoice(options);
 
     switch (response) {
-        case 0: {
+        case 0:
             return;
-        }
-        case 1: {
+
+        case 1:
             fractalSelected = Fractal::Mandelbrot;
             break;
-        }
-        case 2: {
+
+        case 2:
             fractalSelected = Fractal::Julia;
             break;
-        }
-        case 3: {
+
+        case 3:
             fractalSelected = Fractal::Tricorn;
             break;
-        }
+
     }
 }
 
