@@ -19,9 +19,9 @@
 using namespace std;
 
 void startNavigation() {
-    const vector<double> initialXY = coords;
+    const vector<double> initialXY = {0.0, 0.0};
     const double initialZoom = zoom;
-    double x = coords[0], y = coords[1];
+    double x = 0.0, y = 0.0;
 
     while (true) {
         char input;
@@ -32,13 +32,13 @@ void startNavigation() {
          vector<vector<int>> fractalSet;
         switch (getFractalSelected()) {
             case Fractal::Mandelbrot:
-                fractalSet = calcRect(x, y, width, height, (X2_M-X1_M) / zoom, (Y2_M-Y1_M) / zoom);
+                fractalSet = calcRect(coords_M1[0] + x, coords_M1[1] + y, width, height, (X2_M-X1_M) / zoom, (Y2_M-Y1_M) / zoom);
                 break;
             case Fractal::Julia:
               fractalSet = juliaRect(x, y, CX_J, CY_J, R_J/zoom, width, height);
                 break;
             case Fractal::Tricorn:
-                fractalSet = tricornRect(x, y,
+                fractalSet = tricornRect(XC_T +x, YC_T+y,
                                          100, 100, (X2_T-X1_T)/zoom, (Y2_T-Y1_T)/zoom);
                 break;
         }
@@ -72,7 +72,6 @@ void startNavigation() {
                 zoom /= 2;
                 break;
             case 'q':
-                coords = initialXY;
                 zoom = initialZoom;
                 return;
         }

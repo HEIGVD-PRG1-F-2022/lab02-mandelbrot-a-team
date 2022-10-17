@@ -10,6 +10,10 @@
 
 #include <vector>
 #include "fractal.h"
+//for Julia
+const static double R_J = 2.0; //set limit
+const static double CX_J = -0.512511498387847167; //x coordinate of point of interest
+const static double CY_J = 0.521295573094847167; //y coordinate of point of interest
 
 int julia(double zx, double zy, double cx, double cy);
 

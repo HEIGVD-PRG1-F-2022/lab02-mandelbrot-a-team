@@ -12,7 +12,7 @@
 
 static int width = 100, height = 100;
 
-static std::vector<double> coords = {-0.761574, -0.0847596};
+
 
 static double zoom = 1;
 
