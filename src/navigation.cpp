@@ -38,9 +38,6 @@ void startNavigation() {
               fractalSet = juliaRect(x, y, CX_J, CY_J, R_J/zoom, width, height);
                 break;
             case Fractal::Tricorn:
-                x = (X2_T-X1_T)/2.0 + X1_T;
-                y = (Y2_T-Y1_T)/2.0 + Y1_T;
-
                 fractalSet = tricornRect(x, y,
                                          100, 100, (X2_T-X1_T)/zoom, (Y2_T-Y1_T)/zoom);
                 break;
