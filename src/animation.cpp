@@ -18,15 +18,18 @@
 
 using namespace std;
 
-void startAnimation() {
+void startAnimation()
+{
     const vector<double> initialXY = {0.0, 0.0};
     const double initialZoom = zoom;
     double x = 0.0, y = 0.0;
 
     const double maxZoom = zoom * pow(2, 64);
 
-    while (true) {
-        if (zoom >= maxZoom) {
+    while (true)
+    {
+        if (zoom >= maxZoom)
+        {
             zoom = initialZoom;
             cout << "> Press enter a key to leave";
             cin.ignore();
@@ -34,23 +37,23 @@ void startAnimation() {
                 break;
             break;
         }
-
-        char input;
+        
         vector<string> options = {"Select your fractal", "Free navigation", "Auto zoom"};
 
         vector<vector<int>> fractalSet;
-        switch (getFractalSelected()) {
-            case Fractal::Mandelbrot:
-                fractalSet = calcRect(coords_M1[0] + x, coords_M1[1] + y, width, height, (X2_M - X1_M) / zoom,
-                                      (Y2_M - Y1_M) / zoom);
-                break;
-            case Fractal::Julia:
-                fractalSet = juliaRect(x, y, CX_J, CY_J, R_J / zoom, width, height);
-                break;
-            case Fractal::Tricorn:
-                fractalSet = tricornRect(XC_T + x, YC_T + y,
-                                         100, 100, (X2_T - X1_T) / zoom, (Y2_T - Y1_T) / zoom);
-                break;
+        switch (getFractalSelected())
+        {
+        case Fractal::Mandelbrot:
+            fractalSet = calcRect(coords_M1[0] + x, coords_M1[1] + y, width, height, (X2_M - X1_M) / zoom,
+                                  (Y2_M - Y1_M) / zoom);
+            break;
+        case Fractal::Julia:
+            fractalSet = juliaRect(x, y, CX_J, CY_J, R_J / zoom, width, height);
+            break;
+        case Fractal::Tricorn:
+            fractalSet = tricornRect(XC_T + x, YC_T + y,
+                                     100, 100, (X2_T - X1_T) / zoom, (Y2_T - Y1_T) / zoom);
+            break;
         }
 
         setConsoleCursorToStart();
