@@ -13,15 +13,15 @@ Building a c++ project to display mandelbrot set
 - [x] Display 2D array
   - [x] with integers values
   - [x] with ASCII chars with grey levels
-- [ ] Animates the 2D display
-  - [ ] Add waiting time between each images
-  - [ ] Find an interesting level of zoom to display the mandelbrot
+- [x] Animates the 2D display
+  - [x] Add waiting time between each images
+  - [x] Find an interesting level of zoom to display the mandelbrot
 
 ### Bonus points
 
-- [ ] Display colors
+- [x] Display colors
 - [ ] Graphical display
-- [ ] Free navigation into the mandelbrot
+- [x] Free navigation into the mandelbrot
 
 ## Course
 
